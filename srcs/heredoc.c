@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 17:11:04 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/11 14:10:37 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:56:48 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	ft_heredoc(char *dl, char **envp, char *cmd, int fd[2])
 		{
 			if (!ft_strncmp(dl, line, ft_strlen(line) - 1))
 				break ;
-			ft_putstr_fd(line, tfd);
+			// ft_putstr_fd(line, tfd);
+			write(tfd, line, ft_strlen(line));
 			free(line);
 			line = get_next_line(STDIN_FILENO);
 		}
@@ -47,7 +48,6 @@ void	ft_heredoc(char *dl, char **envp, char *cmd, int fd[2])
 		dup2(fd[WRITE_END], STDOUT_FILENO);
 		close(fd[WRITE_END]);
 		int tmpfd = open(".heredoc", O_RDONLY);
-		dprintf(2,"%d\n", tmpfd);
 		// (void) tmpfd;
 		// dup(STDIN_FIL NO);
 		dup2(tmpfd , STDIN_FILENO);
@@ -57,7 +57,14 @@ void	ft_heredoc(char *dl, char **envp, char *cmd, int fd[2])
 			ft_execute(cmd, envp);
 		}
 		// waitpid(pid2, NULL, 0);
-		// unlink(".heredoc");
+		close(tmpfd);
+		int pid3 = fork();
+		if (!pid3)
+		{
+			unlink(".heredoc");
+			exit(0);
+		}
+
 		// exit(0);
 	}
 }
