@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:42:22 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/11 02:54:17 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/11 03:43:46 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ int	main(int argc, char *argv[], char *envp[])
 	// if (fdin < 0)
 	// 	perror_exit(argv[1]);
 	// dup2(fdin, STDIN_FILENO);
-	ft_heredoc(argv[0], envp, argv[1], fd);
-	int i = 2;
+	ft_heredoc(argv[2], envp, argv[3], fd);
+	int i = 4;
 	while (i < argc - 2)
 		ft_redirect(argv[i++], envp, fd);
 	int fdout = open(argv[argc - 1], (O_CREAT | O_TRUNC | O_WRONLY),
