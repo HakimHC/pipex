@@ -6,7 +6,7 @@
 #    By: hakahmed <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/07 19:15:07 by hakahmed          #+#    #+#              #
-#    Updated: 2023/04/10 13:44:01 by hakim            ###   ########.fr        #
+#    Updated: 2023/04/11 21:14:54 by hakahmed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -181,3 +181,5 @@ rebonus: fclean bonus
 
 prt:
 	@curl parrot.live
+
+.PHONY: all clean fclean bonus re rebonus prt

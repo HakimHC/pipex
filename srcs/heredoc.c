@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 17:11:04 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/11 19:59:20 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/11 20:22:49 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	read_to_temp(char *dl)
 
 	dl = ft_strjoin(dl, "\n");
 	tfd = ft_open(".heredoc", O_CREAT | O_TRUNC | O_WRONLY);
-	ft_printf("derehoc> ");
+	ft_printf("heredoc> ");
 	line = get_next_line(STDIN_FILENO);
 	while (line)
 	{

@@ -6,7 +6,7 @@
 #    By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 16:18:41 by hakahmed          #+#    #+#              #
-#    Updated: 2023/04/11 19:55:46 by hakahmed         ###   ########.fr        #
+#    Updated: 2023/04/11 21:05:05 by hakahmed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,6 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-# CFLAGS += -fsanitize=address -g3
-
 # ==== ==== END ==== ==== #
 
 
@@ -41,7 +39,7 @@ LIBDIR = libft
 
 LIB = $(LIBDIR)/$(LIBNAME)
 
-LFTINC = -I $(LIBDIR)/$(INC)
+CFLAGS += -I $(LIBDIR)/$(INC)
 
 LDFLAGS = -L $(LIBDIR) -lft
 
@@ -71,7 +69,7 @@ SRCS = $(addprefix $(SRCDIR)/,$(SRCFILES))
 # ==== ==== INC ==== ==== #
 
 INC = inc
-IFLAGS = -I $(INC)
+CFLAGS = -I $(INC)
 
 # ==== ==== END ==== ==== #
 
@@ -86,12 +84,7 @@ BFALSE = $(BFLAGS)0
 
 OBJDIR = .obj
 
-OBJS = $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
-
-$(OBJDIR)/%.o:%.c
-	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) $(IFLAGS) $(LFTINC) -c $< -o $@
-	@echo "$(bold)[ $(COLOUR_GREEN)OK $(COLOUR_END)$(bold)] $(reset)" $<
+OBJS = $(addprefix $(OBJDIR)/,$(SRCFILES:.c=.o))
 
 # ==== ==== END ==== ==== #
 
@@ -111,27 +104,39 @@ COLOUR_END=\033[0m
 
 # ==== ==== RULES ==== ==== #
 
-$(NAME): $(OBJS)
-	@make -C libft
-	@$(CC) $(CFLAGS) $(LFTINC) $(OBJS) $(LDFLAGS) -o $(NAME)
-	@echo "$(COLOUR_RED)$(bold)run the program by executing ./$(NAME) infile cmd1 cmd2 outfile $(reset)"
-
 all: $(NAME)
 
+$(NAME): $(OBJS)
+	@make -C libft
+	@$(CC) $^ $(LDFLAGS) -o $@
+	@echo "$(COLOUR_RED)$(bold)run the program by executing ./$(NAME) infile cmd1 cmd2 outfile $(reset)"
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR) 
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "$(bold)[ $(COLOUR_GREEN)OK $(COLOUR_END)$(bold)] $(reset)" $<
+
+$(OBJDIR):
+	@mkdir -p $@
+
 clean:
-	@make clean -C libft
-	@rm -rf $(OBJS)
+	make fclean -C libft
+	rm -rf $(OBJDIR)
 
 fclean: clean
-	@make fclean -C libft
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
-CFLAGS += $(BTRUE)
+sanitize: CFLAGS += -g3 -fsanitize=address
+sanitize: LDFLAGS += -fsanitize=address
+sanitize: all
 
+bonus: CFLAGS += $(BTRUE)
 bonus: all
-	
 
 prt:
 	@curl parrot.live
+
+.SILENT: clean fclean
+
+.PHONY: all clean fclean re bonus prt
