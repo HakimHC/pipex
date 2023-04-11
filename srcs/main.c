@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:42:22 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/11 03:43:46 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/11 14:09:49 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ void	ft_redirect(char *cmd, char **envp, int fd[2])
 	}
 	else 
 	{
+		waitpid(pid, &status, 0);
 		close(fd[WRITE_END]);
 		dup2(fd[READ_END], STDIN_FILENO);
 		close(fd[READ_END]);
-		waitpid(pid, &status, 1);
 	}
 }
 
