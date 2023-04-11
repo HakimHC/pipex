@@ -6,11 +6,12 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:42:22 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/11 17:50:46 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/11 19:58:10 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
+#include <stdlib.h>
 
 int	ft_abs_path(char *cmd)
 {
@@ -77,23 +78,32 @@ void	ft_redirect(char *cmd, char **envp, int fd[2], int u)
 		close(fd[READ_END]);
 	}
 }
-//
-// int	main(int argc, char *argv[], char *envp[])
-// {
-// 	// int fdin = open(argv[1], O_RDONLY);
-// 	int fd[2];
-// 	// if (fdin < 0)
-// 	// 	perror_exit(argv[1]);
-// 	// dup2(fdin, STDIN_FILENO);
-// 	ft_heredoc(argv[2], envp, argv[3], fd);
-// 	int i = 4;
-// 	while (i < argc - 2)
-// 		ft_redirect(argv[i++], envp, fd, 0);
-// 	int fdout = open(argv[argc - 1], (O_CREAT | O_TRUNC | O_WRONLY),
-// 			(S_IWUSR | S_IRUSR | S_IRGRP | S_IROTH));
-// 	if (fdout < 0)
-// 		perror_exit(argv[argc - 1]);
-// 	dup2(fdout, STDOUT_FILENO);
-// 	ft_execute(argv[argc - 2], envp);
-// 	return (EXIT_SUCCESS);
-// }
+
+int	main(int argc, char *argv[], char *envp[])
+{
+	// printf("BONUS - %d\n", BONUS);
+	if (BONUS == 0)
+		return (no_bonus(argc, argv, envp));
+	else if (argc >= 6)
+	{
+		if (!ft_strncmp(argv[1], "here_doc", 9))
+		{
+			bonus_heredoc(argc, argv, envp);
+			return (0);
+		}
+	}
+	else if (argc >= 5)
+	{
+		bonus_no_heredoc(argc, argv, envp);
+		return (0);
+	}
+	return (EXIT_FAILURE);
+}
+
+////////////// TO DOOOOOOOOOO  ////////////////////
+/// ---- HEREDOC O_APPEND ----- :D
+/// ---- STRNCMP	------  :D
+/// ---- ./ ../ etc
+/// ---- FT_OPEN	------	:D
+/// ---- ARGC		------  :D 
+/// ---- MAKEFILE

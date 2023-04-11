@@ -6,30 +6,31 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 17:11:04 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/11 17:48:49 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/11 19:59:20 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-#include <stdio.h>
-#include <sys/fcntl.h>
-#include <unistd.h>
 
 void	read_to_temp(char *dl)
 {
 	int		tfd;
 	char	*line;
 
-	tfd = open(".heredoc", O_CREAT | O_TRUNC | O_WRONLY, 0644);
+	dl = ft_strjoin(dl, "\n");
+	tfd = ft_open(".heredoc", O_CREAT | O_TRUNC | O_WRONLY);
+	ft_printf("derehoc> ");
 	line = get_next_line(STDIN_FILENO);
 	while (line)
 	{
-		if (!ft_strncmp(dl, line, ft_strlen(line) - 1))
+		if (!ft_strcmp(dl, line))
 			break ;
 		write(tfd, line, ft_strlen(line));
 		free(line);
+		ft_printf("heredoc> ");
 		line = get_next_line(STDIN_FILENO);
 	}
+	free(dl);
 	free(line);
 	close(tfd);
 }

@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 19:43:19 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/06 19:50:29 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/11 19:38:02 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,14 @@ void	ft_pipe(int fd[2])
 	p = pipe(fd);
 	if (p < 0)
 		perror_exit("pipe");
+}
+
+int	ft_open(char *file, int oflags)
+{
+	int	fd;
+
+	fd = open(file, oflags, 0644);
+	if (fd < 0)
+		perror_exit(file);
+	return (fd);
 }

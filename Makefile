@@ -6,7 +6,7 @@
 #    By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 16:18:41 by hakahmed          #+#    #+#              #
-#    Updated: 2023/04/10 19:25:35 by hakahmed         ###   ########.fr        #
+#    Updated: 2023/04/11 19:55:46 by hakahmed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,8 @@ SRCFILES = main.c \
 	   envparser.c \
 	   error_handling.c \
 	   utils.c \
-	   heredoc.c
+	   heredoc.c \
+	   init.c
 
 SRCS = $(addprefix $(SRCDIR)/,$(SRCFILES))
 
@@ -75,6 +76,10 @@ IFLAGS = -I $(INC)
 # ==== ==== END ==== ==== #
 
 
+BFLAGS = -D BONUS=
+
+BTRUE = $(BFLAGS)1 
+BFALSE = $(BFLAGS)0 
 
 
 # ==== ==== OBJS ==== ==== #
@@ -122,6 +127,11 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
+
+CFLAGS += $(BTRUE)
+
+bonus: all
+	
 
 prt:
 	@curl parrot.live
