@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:43:37 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/11 01:50:38 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/11 17:51:25 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int		ft_error_outfile(char *out);
 pid_t	ft_fork(void);
 void	ft_pipe(int fd[2]);
 void	ft_heredoc(char *dl, char **envp, char *cmd, int fd[2]);
-void	ft_redirect(char *cmd, char **envp, int fd[2]);
+void	ft_redirect(char *cmd, char **envp, int fd[2], int u);
 void	ft_execute(char *cmd, char **envp);
-int ft_abs_path(char *cmd);
+int		ft_abs_path(char *cmd);
 
 #endif

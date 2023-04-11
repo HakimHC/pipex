@@ -6,7 +6,7 @@
 /*   By: hakahmed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 19:31:20 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/11 02:28:07 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/11 17:52:16 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	*ft_strjoin_gnl(char const *s1, char const *s2)
 		res = ft_strdup_gnl("");
 		return (res);
 	}	
-	res = (char *) malloc((ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1) * sizeof(char));
+	res = (char *) malloc((ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1));
 	if (!res)
 		return (0);
 	i = 0;

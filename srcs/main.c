@@ -6,13 +6,13 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:42:22 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/11 14:09:49 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/11 17:50:46 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int ft_abs_path(char *cmd)
+int	ft_abs_path(char *cmd)
 {
 	if (!cmd)
 		return (0);
@@ -26,7 +26,7 @@ int ft_abs_path(char *cmd)
 void	ft_execute(char *cmd, char **envp)
 {
 	char	**cmd_flags;
-	char *cmd_exec;
+	char	*cmd_exec;
 
 	cmd_flags = ft_split(cmd, 32);
 	if (ft_abs_path(cmd_flags[0]))
@@ -40,10 +40,25 @@ void	ft_execute(char *cmd, char **envp)
 	exit(EXIT_FAILURE);
 }
 
-void	ft_redirect(char *cmd, char **envp, int fd[2])
+void	exec_unlink(char *cmd, char **envp, int u)
 {
-	pid_t pid;
-	int status;
+	if (u)
+	{
+		if (!fork())
+			ft_execute(cmd, envp);
+		else
+		{
+			unlink(".heredoc");
+			exit(0);
+		}
+	}
+	ft_execute(cmd, envp);
+}
+
+void	ft_redirect(char *cmd, char **envp, int fd[2], int u)
+{
+	pid_t	pid;
+	int		status;
 
 	ft_pipe(fd);
 	pid = ft_fork();
@@ -52,9 +67,9 @@ void	ft_redirect(char *cmd, char **envp, int fd[2])
 		close(fd[READ_END]);
 		dup2(fd[WRITE_END], STDOUT_FILENO);
 		close(fd[WRITE_END]);
-		ft_execute(cmd, envp);
+		exec_unlink(cmd, envp, u);
 	}
-	else 
+	else
 	{
 		waitpid(pid, &status, 0);
 		close(fd[WRITE_END]);
@@ -62,23 +77,23 @@ void	ft_redirect(char *cmd, char **envp, int fd[2])
 		close(fd[READ_END]);
 	}
 }
-
-int	main(int argc, char *argv[], char *envp[])
-{
-	// int fdin = open(argv[1], O_RDONLY);
-	int fd[2];
-	// if (fdin < 0)
-	// 	perror_exit(argv[1]);
-	// dup2(fdin, STDIN_FILENO);
-	ft_heredoc(argv[2], envp, argv[3], fd);
-	int i = 4;
-	while (i < argc - 2)
-		ft_redirect(argv[i++], envp, fd);
-	int fdout = open(argv[argc - 1], (O_CREAT | O_TRUNC | O_WRONLY),
-			(S_IWUSR | S_IRUSR | S_IRGRP | S_IROTH));
-	if (fdout < 0)
-		perror_exit(argv[argc - 1]);
-	dup2(fdout, STDOUT_FILENO);
-	ft_execute(argv[argc - 2], envp);
-	return (EXIT_SUCCESS);
-}
+//
+// int	main(int argc, char *argv[], char *envp[])
+// {
+// 	// int fdin = open(argv[1], O_RDONLY);
+// 	int fd[2];
+// 	// if (fdin < 0)
+// 	// 	perror_exit(argv[1]);
+// 	// dup2(fdin, STDIN_FILENO);
+// 	ft_heredoc(argv[2], envp, argv[3], fd);
+// 	int i = 4;
+// 	while (i < argc - 2)
+// 		ft_redirect(argv[i++], envp, fd, 0);
+// 	int fdout = open(argv[argc - 1], (O_CREAT | O_TRUNC | O_WRONLY),
+// 			(S_IWUSR | S_IRUSR | S_IRGRP | S_IROTH));
+// 	if (fdout < 0)
+// 		perror_exit(argv[argc - 1]);
+// 	dup2(fdout, STDOUT_FILENO);
+// 	ft_execute(argv[argc - 2], envp);
+// 	return (EXIT_SUCCESS);
+// }
