@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:42:22 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/11 21:12:49 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/11 23:35:01 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	ft_redirect(char *cmd, char **envp, int fd[2], int u)
 	}
 	else
 	{
-		waitpid(pid, &status, 1);
+		waitpid(pid, &status, -1);
 		close(fd[WRITE_END]);
 		dup2(fd[READ_END], STDIN_FILENO);
 		close(fd[READ_END]);
@@ -81,19 +81,13 @@ void	ft_redirect(char *cmd, char **envp, int fd[2], int u)
 
 int	main(int argc, char *argv[], char *envp[])
 {
-	printf("BONUS - %d\n", BONUS);
+	// printf("BONUS - %d\n", BONUS);
 	if (BONUS == 0)
 		return (no_bonus(argc, argv, envp));
 	else if (argc >= 6 && !ft_strncmp(argv[1], "here_doc", 9))
-	{
 		bonus_heredoc(argc, argv, envp);
-		return (0);
-	}
 	else if (argc >= 5)
-	{
 		bonus_no_heredoc(argc, argv, envp);
-		return (0);
-	}
 	return (EXIT_FAILURE);
 }
 
@@ -105,3 +99,5 @@ int	main(int argc, char *argv[], char *envp[])
 /// ---- ARGC		------  :D 
 /// ---- MAKEFILE
 /// ---- LIBFT CACHE A.OUT ETC	
+///
+/// ---- infile error --> no outfile

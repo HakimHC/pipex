@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:43:37 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/11 18:21:00 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/11 22:34:10 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@
 # include <string.h>
 # define READ_END 0
 # define WRITE_END 1
-#  ifndef BONUS
-#   define BONUS 0
-#  endif
+# ifndef BONUS
+#  define BONUS 0
+# endif
 
-char	**ft_split(char const *s, char c);
 char	*get_path(char *envp[]);
 char	**split_path(char *path);
 int		ft_error_files(char *in, char *out);
@@ -41,5 +40,9 @@ void	ft_heredoc(char *dl, char **envp, char *cmd, int fd[2]);
 void	ft_redirect(char *cmd, char **envp, int fd[2], int u);
 void	ft_execute(char *cmd, char **envp);
 int		ft_abs_path(char *cmd);
+int		no_bonus(int argc, char **argv, char **envp);
+void	bonus_no_heredoc(int argc, char **argv, char **envp);
+void	bonus_heredoc(int argc, char **argv, char **envp);
+int		ft_open(char *file, int oflags);
 
 #endif

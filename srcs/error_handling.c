@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:15:56 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/03/24 17:59:13 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/11 23:09:17 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 void	perror_exit(char *error)
 {
 	perror(error);
-	exit(EXIT_FAILURE);
+	exit(errno);
 }
 
 int	ft_error_infile(char *in)
