@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:43:37 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/11 22:34:10 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/12 14:27:37 by hakim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <string.h>
+# include <sys/wait.h>
 # define READ_END 0
 # define WRITE_END 1
 # ifndef BONUS
