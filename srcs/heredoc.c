@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 17:11:04 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/12 14:33:54 by hakim            ###   ########.fr       */
+/*   Updated: 2023/04/12 18:22:50 by hakim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ void	ft_heredoc(char *dl, char **envp, char *cmd, int fd[2])
 	read_to_temp(dl, envp);
 	tfd = open(".heredoc", O_RDONLY);
 	dup2(tfd, STDIN_FILENO);
-	ft_redirect(cmd, envp, fd, 1);
+	ft_redirect_pipe(cmd, envp, fd, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:42:22 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/11 23:35:01 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/12 18:24:32 by hakim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,39 +44,8 @@ void	ft_execute(char *cmd, char **envp)
 void	exec_unlink(char *cmd, char **envp, int u)
 {
 	if (u)
-	{
-		if (!fork())
-			ft_execute(cmd, envp);
-		else
-		{
-			unlink(".heredoc");
-			exit(0);
-		}
-	}
+		unlink(".heredoc");
 	ft_execute(cmd, envp);
-}
-
-void	ft_redirect(char *cmd, char **envp, int fd[2], int u)
-{
-	pid_t	pid;
-	int		status;
-
-	ft_pipe(fd);
-	pid = ft_fork();
-	if (!pid)
-	{
-		close(fd[READ_END]);
-		dup2(fd[WRITE_END], STDOUT_FILENO);
-		close(fd[WRITE_END]);
-		exec_unlink(cmd, envp, u);
-	}
-	else
-	{
-		waitpid(pid, &status, -1);
-		close(fd[WRITE_END]);
-		dup2(fd[READ_END], STDIN_FILENO);
-		close(fd[READ_END]);
-	}
 }
 
 int	main(int argc, char *argv[], char *envp[])
@@ -100,4 +69,5 @@ int	main(int argc, char *argv[], char *envp[])
 /// ---- MAKEFILE
 /// ---- LIBFT CACHE A.OUT ETC	
 ///
-/// ---- infile error --> no outfile
+/// ---- infile error --> no outfile ---- :DDDDDDDDD
+/// ---- pipex.h

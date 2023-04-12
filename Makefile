@@ -6,7 +6,7 @@
 #    By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 16:18:41 by hakahmed          #+#    #+#              #
-#    Updated: 2023/04/11 21:05:05 by hakahmed         ###   ########.fr        #
+#    Updated: 2023/04/12 18:22:08 by hakim            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,8 @@ SRCFILES = main.c \
 	   error_handling.c \
 	   utils.c \
 	   heredoc.c \
-	   init.c
+	   init.c \
+	   redirect.c
 
 SRCS = $(addprefix $(SRCDIR)/,$(SRCFILES))
 
@@ -69,7 +70,7 @@ SRCS = $(addprefix $(SRCDIR)/,$(SRCFILES))
 # ==== ==== INC ==== ==== #
 
 INC = inc
-CFLAGS = -I $(INC)
+CFLAGS += -I $(INC)
 
 # ==== ==== END ==== ==== #
 
