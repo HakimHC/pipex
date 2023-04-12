@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:42:22 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/12 18:24:32 by hakim            ###   ########.fr       */
+/*   Updated: 2023/04/12 18:50:20 by hakim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,3 +71,5 @@ int	main(int argc, char *argv[], char *envp[])
 ///
 /// ---- infile error --> no outfile ---- :DDDDDDDDD
 /// ---- pipex.h
+/// ---- command not found
+/// ---- sleep 5
