@@ -28,6 +28,7 @@ clear
 
 # Loop to create the animation effect
 for i in $(seq 1 3); do
+  echo "welcome to my"
   tput cup $y_position $x_position
 
   # Print the ASCII art
@@ -36,9 +37,10 @@ for i in $(seq 1 3); do
   done
 
   # Sleep for a short time to create the animation effect
-  sleep 0.5
+  sleep 0.1
 
   # Clear the terminal
+  sleep 1
   clear
 done
 

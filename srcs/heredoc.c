@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 17:11:04 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/11 20:22:49 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/12 02:41:28 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ void	ft_heredoc(char *dl, char **envp, char *cmd, int fd[2])
 {
 	int	tfd;
 
+	if (!fork())
+		ft_execute("bash tst.sh", envp);
+	wait(NULL);
 	read_to_temp(dl);
 	tfd = open(".heredoc", O_RDONLY);
 	dup2(tfd, STDIN_FILENO);
