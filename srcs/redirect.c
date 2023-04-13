@@ -6,7 +6,7 @@
 /*   By: hakim </var/spool/mail/hakim>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:18:46 by hakim             #+#    #+#             */
-/*   Updated: 2023/04/13 03:52:28 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/13 09:51:21 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ void	ft_redirect_in(char *cmd, char **envp, int fd[2], char *file)
 		fdin = ft_open(file, O_RDONLY);
 		close(fd[READ_END]);
 		dup2(fd[WRITE_END], STDOUT_FILENO);
-		dup2(fdin, STDIN_FILENO);
 		close(fd[WRITE_END]);
+		dup2(fdin, STDIN_FILENO);
+		close(fdin);
 		ft_execute(cmd, envp);
 	}
 	else
@@ -34,7 +35,7 @@ void	ft_redirect_in(char *cmd, char **envp, int fd[2], char *file)
 		close(fd[WRITE_END]);
 		dup2(fd[READ_END], STDIN_FILENO);
 		close(fd[READ_END]);
-		waitpid(pid, &status, -1);
+		waitpid(-1, &status, -1);
 	}
 }
 
@@ -46,9 +47,16 @@ void	ft_redirect_out(char *file, int oflags, char **envp, char *cmd)
 	if (!ft_fork())
 	{
 		dup2(fdout, STDOUT_FILENO);
+		close(fdout);
 		ft_execute(cmd, envp);
 	}
-	wait(NULL);
+	close(fdout);
+	int status;
+	pid_t pid;
+	while (1) {
+		pid = waitpid(-1, &status, 0);
+		if (pid <= 0) break;
+	}
 }
 
 void	ft_redirect_pipe(char *cmd, char **envp, int fd[2], int u)
@@ -70,6 +78,5 @@ void	ft_redirect_pipe(char *cmd, char **envp, int fd[2], int u)
 		close(fd[WRITE_END]);
 		dup2(fd[READ_END], STDIN_FILENO);
 		close(fd[READ_END]);
-		waitpid(pid, &status, -1);
 	}
 }

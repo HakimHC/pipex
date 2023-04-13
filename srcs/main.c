@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:42:22 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/13 04:29:28 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/13 09:22:57 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,22 +59,10 @@ int	main(int argc, char *argv[], char *envp[])
 		bonus_heredoc(argc, argv, envp);
 	else if (argc >= 5)
 		bonus_no_heredoc(argc, argv, envp);
-	int fd = open("rocio", O_RDWR);
-	(void) fd;
-	ft_printf("%d\n", errno);
 	return (EXIT_FAILURE);
 }
 
 ////////////// TO DOOOOOOOOOO  ////////////////////
-/// ---- HEREDOC O_APPEND ----- :D
-/// ---- STRNCMP	------  :D
-/// ---- ./ ../ etc
-/// ---- FT_OPEN	------	:D
-/// ---- ARGC		------  :D 
-/// ---- MAKEFILE
-/// ---- LIBFT CACHE A.OUT ETC	
-///
-/// ---- infile error --> no outfile ---- :DDDDDDDDD
 /// ---- pipex.h
-/// ---- command not found
-/// ---- sleep 5
+/// ---- only last cmd exit code
+/// ---- cmd not found: grep Hello
