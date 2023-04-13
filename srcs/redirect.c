@@ -6,7 +6,7 @@
 /*   By: hakim </var/spool/mail/hakim>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:18:46 by hakim             #+#    #+#             */
-/*   Updated: 2023/04/12 18:31:58 by hakim            ###   ########.fr       */
+/*   Updated: 2023/04/13 03:52:28 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_redirect_in(char *cmd, char **envp, int fd[2], char *file)
 		close(fd[WRITE_END]);
 		dup2(fd[READ_END], STDIN_FILENO);
 		close(fd[READ_END]);
-		waitpid(pid, &status, 1);
+		waitpid(pid, &status, -1);
 	}
 }
 
@@ -70,6 +70,6 @@ void	ft_redirect_pipe(char *cmd, char **envp, int fd[2], int u)
 		close(fd[WRITE_END]);
 		dup2(fd[READ_END], STDIN_FILENO);
 		close(fd[READ_END]);
-		waitpid(pid, &status, 1);
+		waitpid(pid, &status, -1);
 	}
 }

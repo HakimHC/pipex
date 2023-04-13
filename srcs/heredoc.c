@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 17:11:04 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/12 18:22:50 by hakim            ###   ########.fr       */
+/*   Updated: 2023/04/13 01:45:54 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ void	read_to_temp(char *dl, char **envp)
 
 	dl = ft_strjoin(dl, "\n");
 	tfd = ft_open(".heredoc", O_CREAT | O_TRUNC | O_WRONLY);
-	// ft_printf("heredoc> ");
-	if (!fork())
-		ft_execute("echo -n $(tput bold) heredoc>  ", envp);
+	ft_printf("heredoc> ");
 	wait(NULL);
 	write(1, " ", 1);
 	line = get_next_line(STDIN_FILENO);
@@ -31,7 +29,8 @@ void	read_to_temp(char *dl, char **envp)
 			break ;
 		write(tfd, line, ft_strlen(line));
 		free(line);
-	// ft_printf("heredoc> ");
+	ft_printf("heredoc> ");
+	(void) envp;
 	line = get_next_line(STDIN_FILENO);
 	}
 	free(dl);

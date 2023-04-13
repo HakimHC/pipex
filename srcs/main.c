@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:42:22 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/12 18:50:20 by hakim            ###   ########.fr       */
+/*   Updated: 2023/04/13 04:29:28 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,12 @@ void	ft_execute(char *cmd, char **envp)
 	else
 		cmd_exec = get_cmd(path_arr(envp), cmd_flags[0]);
 	if (!cmd_exec)
-		return (ft_free_strarr(cmd_flags));
-	execve(cmd_exec, cmd_flags, envp);
-	ft_free_strarr(cmd_flags);
-	exit(EXIT_FAILURE);
+		return (ft_free_strarr(cmd_flags), exit(EXIT_FAILURE));
+	if (execve(cmd_exec, cmd_flags, envp) == -1)
+	{
+		ft_free_strarr(cmd_flags);
+		perror_exit(cmd);
+	}
 }
 
 void	exec_unlink(char *cmd, char **envp, int u)
@@ -57,6 +59,9 @@ int	main(int argc, char *argv[], char *envp[])
 		bonus_heredoc(argc, argv, envp);
 	else if (argc >= 5)
 		bonus_no_heredoc(argc, argv, envp);
+	int fd = open("rocio", O_RDWR);
+	(void) fd;
+	ft_printf("%d\n", errno);
 	return (EXIT_FAILURE);
 }
 

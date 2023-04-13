@@ -6,7 +6,7 @@
 #    By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 16:18:41 by hakahmed          #+#    #+#              #
-#    Updated: 2023/04/12 18:22:08 by hakim            ###   ########.fr        #
+#    Updated: 2023/04/13 03:50:02 by hakahmed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -134,6 +134,8 @@ sanitize: all
 
 bonus: CFLAGS += $(BTRUE)
 bonus: all
+
+rebonus: fclean bonus
 
 prt:
 	@curl parrot.live
