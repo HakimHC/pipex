@@ -6,13 +6,22 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 13:28:50 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/12 21:57:20 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/13 21:21:17 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-#include <stdlib.h>
-#include <unistd.h>
+
+int	ft_abs_path(char *cmd)
+{
+	if (!cmd)
+		return (0);
+	if (cmd[0] != '.' && cmd[0] != '~' && cmd[0] != '/')
+		return (0);
+	if (!access(cmd, X_OK))
+		return (1);
+	return (0);
+}
 
 char	*get_path(char *envp[])
 {
@@ -25,7 +34,6 @@ char	*get_path(char *envp[])
 			return (ft_strdup(ft_strchr(envp[i], '=') + 1));
 		i++;
 	}
-	// perror_exit("PATH");
 	return (NULL);
 }
 
@@ -60,7 +68,7 @@ char	**path_arr(char *envp[])
 	return (arr_path);
 }
 
-char	*get_cmd(char *path[], char *cmd)
+char	*get_cmd(char *path[], char *cmd, int b)
 {
 	int		i;
 	char	*check;
@@ -76,6 +84,14 @@ char	*get_cmd(char *path[], char *cmd)
 	}
 	if (path)
 		ft_free_strarr(path);
+	if (b)
+	{
+		ft_putstr_fd("command not found: ", 2);
+		if (cmd)
+			ft_putendl_fd(cmd, 2);
+		else
+			ft_putendl_fd("", 2);
+	}
 	return (0);
 }
 

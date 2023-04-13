@@ -6,7 +6,7 @@
 /*   By: hakim </var/spool/mail/hakim>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:18:46 by hakim             #+#    #+#             */
-/*   Updated: 2023/04/13 09:51:21 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/13 17:52:33 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_redirect_in(char *cmd, char **envp, int fd[2], char *file)
 {
 	pid_t	pid;
 	int		status;
-	int	fdin;
+	int		fdin;
 
 	ft_pipe(fd);
 	pid = ft_fork();
@@ -41,7 +41,10 @@ void	ft_redirect_in(char *cmd, char **envp, int fd[2], char *file)
 
 void	ft_redirect_out(char *file, int oflags, char **envp, char *cmd)
 {
-	int	fdout;
+	int		fdout;
+	int		i;
+	int		status;
+	pid_t	pid;
 
 	fdout = ft_open(file, oflags);
 	if (!ft_fork())
@@ -51,18 +54,18 @@ void	ft_redirect_out(char *file, int oflags, char **envp, char *cmd)
 		ft_execute(cmd, envp);
 	}
 	close(fdout);
-	int status;
-	pid_t pid;
-	while (1) {
+	i = 0;
+	while (1)
+	{
 		pid = waitpid(-1, &status, 0);
-		if (pid <= 0) break;
+		if (pid < 0)
+			break ;
 	}
 }
 
 void	ft_redirect_pipe(char *cmd, char **envp, int fd[2], int u)
 {
 	pid_t	pid;
-	int		status;
 
 	ft_pipe(fd);
 	pid = ft_fork();

@@ -6,13 +6,11 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:15:56 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/11 23:09:17 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/13 21:20:38 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-#include <stdlib.h>
-#include <unistd.h>
 
 void	perror_exit(char *error)
 {
@@ -20,23 +18,40 @@ void	perror_exit(char *error)
 	exit(errno);
 }
 
-int	ft_error_infile(char *in)
+void	print_127(char *cmd)
 {
-	if (access(in, F_OK))
-		return (1);
-	if (access(in, R_OK))
-		return (1);
-	return (0);
+	ft_putstr_fd("command not found: ", 2);
+	if (cmd)
+		ft_putendl_fd(cmd, 2);
+	else
+		ft_putendl_fd("", 2);
 }
 
-int	ft_error_outfile(char *out)
+int	is_in_path(char *cmd, char **envp)
 {
-	if (!access(out, F_OK) && access(out, W_OK))
-		return (1);
-	return (0);
+	char	**cmd_flags;
+	char	*cmd_exec;
+
+	cmd_flags = ft_split(cmd, 32);
+	if (ft_abs_path(cmd_flags[0]))
+		cmd_exec = cmd_flags[0];
+	else
+		cmd_exec = get_cmd(path_arr(envp), cmd_flags[0], 0);
+	free(cmd_flags);
+	return (!(!cmd_exec));
 }
-//
-// int	main(void)
-// {
-// 	ft_printf("%d\n", ft_error_files("in", "outt"));
-// }
+
+int	cmds_exists(int argc, char **argv, char **envp)
+{
+	char	*cmdf;
+	char	**cmdp;
+	char	*cmd;
+
+	cmdf = argv[argc - 2];
+	cmdp = ft_split(cmdf, 32);
+	cmd = cmdp[0];
+	if ((!is_in_path(cmd, envp) && access(cmd, X_OK))
+		|| (access(cmd, X_OK) && !is_in_path(cmd, envp)))
+		return (free(cmdp), 0);
+	return (free(cmdp), 1);
+}
