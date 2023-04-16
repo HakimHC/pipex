@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 18:30:41 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/03/25 18:33:34 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/16 18:04:16 by hakim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ void	ft_free_strarr(char **arr)
 	while (arr[i])
 	{
 		free(arr[i]);
+		*(arr + i) = NULL;
 		i++;
 	}
 	free(arr);
+	arr = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 17:11:04 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/13 21:32:44 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/16 18:29:04 by hakim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ void	ft_heredoc(char *dl, char **envp, char *cmd, int fd[2])
 	read_to_temp(dl);
 	tfd = open(".heredoc", O_RDONLY);
 	dup2(tfd, STDIN_FILENO);
+	// close(tfd);
 	ft_redirect_pipe(cmd, envp, fd, 1);
 }

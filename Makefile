@@ -6,7 +6,7 @@
 #    By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 16:18:41 by hakahmed          #+#    #+#              #
-#    Updated: 2023/04/13 06:29:04 by hakahmed         ###   ########.fr        #
+#    Updated: 2023/04/16 18:19:33 by hakim            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -128,9 +128,10 @@ fclean: clean
 
 re: fclean all
 
-sanitize: CFLAGS += -g3 -fsanitize=address
-sanitize: LDFLAGS += -fsanitize=address
-sanitize: all
+sanitize: CFLAGS += -g3 #-fsanitize=address
+# sanitize: LDFLAGS += -fsanitize=address
+sanitize: rebonus 
+
 
 bonus: CFLAGS += $(BTRUE)
 bonus: all

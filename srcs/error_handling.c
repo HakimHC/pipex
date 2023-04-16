@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:15:56 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/13 21:20:38 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/16 18:10:01 by hakim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,18 @@ int	is_in_path(char *cmd, char **envp)
 {
 	char	**cmd_flags;
 	char	*cmd_exec;
+	int	r;
 
 	cmd_flags = ft_split(cmd, 32);
 	if (ft_abs_path(cmd_flags[0]))
 		cmd_exec = cmd_flags[0];
 	else
 		cmd_exec = get_cmd(path_arr(envp), cmd_flags[0], 0);
-	free(cmd_flags);
-	return (!(!cmd_exec));
+	ft_free_strarr(cmd_flags);
+	r = !(!cmd_exec);
+	if (cmd_exec)
+		free(cmd_exec);
+	return (r);
 }
 
 int	cmds_exists(int argc, char **argv, char **envp)
@@ -52,6 +56,6 @@ int	cmds_exists(int argc, char **argv, char **envp)
 	cmd = cmdp[0];
 	if ((!is_in_path(cmd, envp) && access(cmd, X_OK))
 		|| (access(cmd, X_OK) && !is_in_path(cmd, envp)))
-		return (free(cmdp), 0);
-	return (free(cmdp), 1);
+		return (ft_free_strarr(cmdp), 0);
+	return (ft_free_strarr(cmdp), 1);
 }

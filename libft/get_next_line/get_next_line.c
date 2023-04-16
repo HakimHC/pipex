@@ -6,7 +6,7 @@
 /*   By: hakahmed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 16:11:21 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/11 02:28:44 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/16 18:37:32 by hakim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,12 @@ char	*get_next_line(int fd)
 	{
 		free(s);
 		s = NULL;
-		return (0);
+		return (NULL);
 	}
 	s = ft_substr_gnl(s, 0, BUFFER_SIZE);
+	if (fd < 3)
+		free(s);
+	if (fd < 3)
+		s = NULL;
 	return (temp);
 }
