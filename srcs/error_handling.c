@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:15:56 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/16 18:10:01 by hakim            ###   ########.fr       */
+/*   Updated: 2023/04/19 12:07:10 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int	cmds_exists(int argc, char **argv, char **envp)
 	cmdf = argv[argc - 2];
 	cmdp = ft_split(cmdf, 32);
 	cmd = cmdp[0];
+	if (!cmd)
+		return(ft_free_strarr(cmdp), 0);
 	if ((!is_in_path(cmd, envp) && access(cmd, X_OK))
 		|| (access(cmd, X_OK) && !is_in_path(cmd, envp)))
 		return (ft_free_strarr(cmdp), 0);
