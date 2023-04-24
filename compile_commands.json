@@ -1,0 +1,737 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "libft/inc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/main.o",
+      "srcs/main.c"
+    ],
+    "directory": "/root/pipex",
+    "file": "/root/pipex/srcs/main.c",
+    "output": "/root/pipex/.obj/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "libft/inc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/envparser.o",
+      "srcs/envparser.c"
+    ],
+    "directory": "/root/pipex",
+    "file": "/root/pipex/srcs/envparser.c",
+    "output": "/root/pipex/.obj/envparser.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "libft/inc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/error_handling.o",
+      "srcs/error_handling.c"
+    ],
+    "directory": "/root/pipex",
+    "file": "/root/pipex/srcs/error_handling.c",
+    "output": "/root/pipex/.obj/error_handling.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "libft/inc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/utils.o",
+      "srcs/utils.c"
+    ],
+    "directory": "/root/pipex",
+    "file": "/root/pipex/srcs/utils.c",
+    "output": "/root/pipex/.obj/utils.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "libft/inc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/heredoc.o",
+      "srcs/heredoc.c"
+    ],
+    "directory": "/root/pipex",
+    "file": "/root/pipex/srcs/heredoc.c",
+    "output": "/root/pipex/.obj/heredoc.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "libft/inc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/init.o",
+      "srcs/init.c"
+    ],
+    "directory": "/root/pipex",
+    "file": "/root/pipex/srcs/init.c",
+    "output": "/root/pipex/.obj/init.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-I",
+      "libft/inc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/redirect.o",
+      "srcs/redirect.c"
+    ],
+    "directory": "/root/pipex",
+    "file": "/root/pipex/srcs/redirect.c",
+    "output": "/root/pipex/.obj/redirect.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_isalpha.o",
+      "part1/ft_isalpha.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_isalpha.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_isalpha.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_isdigit.o",
+      "part1/ft_isdigit.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_isdigit.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_isdigit.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_isalnum.o",
+      "part1/ft_isalnum.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_isalnum.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_isalnum.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_isascii.o",
+      "part1/ft_isascii.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_isascii.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_isascii.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_isprint.o",
+      "part1/ft_isprint.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_isprint.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_isprint.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_strlen.o",
+      "part1/ft_strlen.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_strlen.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_strlen.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_memset.o",
+      "part1/ft_memset.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_memset.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_memset.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_bzero.o",
+      "part1/ft_bzero.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_bzero.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_bzero.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_memcpy.o",
+      "part1/ft_memcpy.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_memcpy.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_memcpy.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_memmove.o",
+      "part1/ft_memmove.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_memmove.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_memmove.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_strlcpy.o",
+      "part1/ft_strlcpy.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_strlcpy.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_strlcpy.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_strlcat.o",
+      "part1/ft_strlcat.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_strlcat.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_strlcat.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_toupper.o",
+      "part1/ft_toupper.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_toupper.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_toupper.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_tolower.o",
+      "part1/ft_tolower.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_tolower.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_tolower.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_strchr.o",
+      "part1/ft_strchr.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_strchr.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_strchr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_strrchr.o",
+      "part1/ft_strrchr.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_strrchr.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_strrchr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_strncmp.o",
+      "part1/ft_strncmp.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_strncmp.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_strncmp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_memchr.o",
+      "part1/ft_memchr.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_memchr.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_memchr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_memcmp.o",
+      "part1/ft_memcmp.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_memcmp.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_memcmp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_strnstr.o",
+      "part1/ft_strnstr.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_strnstr.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_strnstr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_atoi.o",
+      "part1/ft_atoi.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_atoi.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_atoi.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_calloc.o",
+      "part1/ft_calloc.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_calloc.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_calloc.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part1/ft_strdup.o",
+      "part1/ft_strdup.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part1/ft_strdup.c",
+    "output": "/root/pipex/libft/.obj/part1/ft_strdup.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part2/ft_substr.o",
+      "part2/ft_substr.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part2/ft_substr.c",
+    "output": "/root/pipex/libft/.obj/part2/ft_substr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part2/ft_strjoin.o",
+      "part2/ft_strjoin.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part2/ft_strjoin.c",
+    "output": "/root/pipex/libft/.obj/part2/ft_strjoin.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part2/ft_strtrim.o",
+      "part2/ft_strtrim.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part2/ft_strtrim.c",
+    "output": "/root/pipex/libft/.obj/part2/ft_strtrim.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part2/ft_split.o",
+      "part2/ft_split.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part2/ft_split.c",
+    "output": "/root/pipex/libft/.obj/part2/ft_split.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part2/ft_itoa.o",
+      "part2/ft_itoa.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part2/ft_itoa.c",
+    "output": "/root/pipex/libft/.obj/part2/ft_itoa.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part2/ft_strmapi.o",
+      "part2/ft_strmapi.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part2/ft_strmapi.c",
+    "output": "/root/pipex/libft/.obj/part2/ft_strmapi.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part2/ft_striteri.o",
+      "part2/ft_striteri.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part2/ft_striteri.c",
+    "output": "/root/pipex/libft/.obj/part2/ft_striteri.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part2/ft_putchar_fd.o",
+      "part2/ft_putchar_fd.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part2/ft_putchar_fd.c",
+    "output": "/root/pipex/libft/.obj/part2/ft_putchar_fd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part2/ft_putstr_fd.o",
+      "part2/ft_putstr_fd.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part2/ft_putstr_fd.c",
+    "output": "/root/pipex/libft/.obj/part2/ft_putstr_fd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part2/ft_putendl_fd.o",
+      "part2/ft_putendl_fd.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part2/ft_putendl_fd.c",
+    "output": "/root/pipex/libft/.obj/part2/ft_putendl_fd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/part2/ft_putnbr_fd.o",
+      "part2/ft_putnbr_fd.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/part2/ft_putnbr_fd.c",
+    "output": "/root/pipex/libft/.obj/part2/ft_putnbr_fd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/additional/ft_atol.o",
+      "additional/ft_atol.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/additional/ft_atol.c",
+    "output": "/root/pipex/libft/.obj/additional/ft_atol.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/additional/ft_free_strarr.o",
+      "additional/ft_free_strarr.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/additional/ft_free_strarr.c",
+    "output": "/root/pipex/libft/.obj/additional/ft_free_strarr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/additional/ft_isspace.o",
+      "additional/ft_isspace.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/additional/ft_isspace.c",
+    "output": "/root/pipex/libft/.obj/additional/ft_isspace.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/additional/ft_strcmp.o",
+      "additional/ft_strcmp.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/additional/ft_strcmp.c",
+    "output": "/root/pipex/libft/.obj/additional/ft_strcmp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/ft_printf/ft_printf.o",
+      "ft_printf/ft_printf.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/ft_printf/ft_printf.c",
+    "output": "/root/pipex/libft/.obj/ft_printf/ft_printf.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/ft_printf/str_utils.o",
+      "ft_printf/str_utils.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/ft_printf/str_utils.c",
+    "output": "/root/pipex/libft/.obj/ft_printf/str_utils.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/ft_printf/nb_utils.o",
+      "ft_printf/nb_utils.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/ft_printf/nb_utils.c",
+    "output": "/root/pipex/libft/.obj/ft_printf/nb_utils.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/get_next_line/get_next_line.o",
+      "get_next_line/get_next_line.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/get_next_line/get_next_line.c",
+    "output": "/root/pipex/libft/.obj/get_next_line/get_next_line.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "inc",
+      "-c",
+      "-o",
+      ".obj/get_next_line/get_next_line_utils.o",
+      "get_next_line/get_next_line_utils.c"
+    ],
+    "directory": "/root/pipex/libft",
+    "file": "/root/pipex/libft/get_next_line/get_next_line_utils.c",
+    "output": "/root/pipex/libft/.obj/get_next_line/get_next_line_utils.o"
+  }
+]
