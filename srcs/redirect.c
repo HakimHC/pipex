@@ -6,7 +6,7 @@
 /*   By: hakim </var/spool/mail/hakim>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:18:46 by hakim             #+#    #+#             */
-/*   Updated: 2023/04/19 13:56:06 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/19 17:50:22 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	ft_redirect_out(char *file, int oflags, char **envp, char *cmd)
 		ft_execute(cmd, envp);
 	}
 	close(fdout);
+	close(STDIN_FILENO);
 	while (1)
 	{
 		pid = waitpid(-1, &status, 0);

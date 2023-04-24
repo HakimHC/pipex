@@ -6,7 +6,7 @@
 /*   By: hakahmed <hakahmed@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:15:56 by hakahmed          #+#    #+#             */
-/*   Updated: 2023/04/19 12:07:10 by hakahmed         ###   ########.fr       */
+/*   Updated: 2023/04/19 21:43:43 by hakahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,20 @@ int	is_in_path(char *cmd, char **envp)
 {
 	char	**cmd_flags;
 	char	*cmd_exec;
-	int	r;
+	int		r;
 
 	cmd_flags = ft_split(cmd, 32);
 	if (ft_abs_path(cmd_flags[0]))
-		cmd_exec = cmd_flags[0];
+		return(ft_free_strarr(cmd_flags), 1);
 	else
 		cmd_exec = get_cmd(path_arr(envp), cmd_flags[0], 0);
 	ft_free_strarr(cmd_flags);
 	r = !(!cmd_exec);
 	if (cmd_exec)
+	{
 		free(cmd_exec);
+		cmd_exec = NULL;
+	}
 	return (r);
 }
 
@@ -55,7 +58,7 @@ int	cmds_exists(int argc, char **argv, char **envp)
 	cmdp = ft_split(cmdf, 32);
 	cmd = cmdp[0];
 	if (!cmd)
-		return(ft_free_strarr(cmdp), 0);
+		return (ft_free_strarr(cmdp), 0);
 	if ((!is_in_path(cmd, envp) && access(cmd, X_OK))
 		|| (access(cmd, X_OK) && !is_in_path(cmd, envp)))
 		return (ft_free_strarr(cmdp), 0);
